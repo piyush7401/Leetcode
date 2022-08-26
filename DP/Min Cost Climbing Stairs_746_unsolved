@@ -1,0 +1,21 @@
+class Solution {
+public:
+    
+    int costing(vector<int> cost,int n){
+        if(n == 0){
+            return cost[0] ;
+        }
+        else if(n == 1){
+            return cost[1];
+        }
+        else{
+            return min(costing(cost,n-1),costing(cost,n-2)) + cost[n];
+        }
+    }
+    
+    int minCostClimbingStairs(vector<int>& cost) {
+        int n = cost.size();
+        int a = min(costing(cost,n-1),costing(cost,n-2));
+        return a;
+    }
+};
