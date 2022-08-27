@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int tribonacci(int n) {
+        long long zero = 0;
+        long long one = 1;
+        long long two = 1;
+        long long three =0;
+        for(int i=3;i<=n;i++){
+            three = zero + one + two;
+            zero =  one;
+            one = two;
+            two = three;
+        }
+        if(n == 0){
+            return 0;
+        }
+        else if(n == 1){
+            return 1;
+        }
+        else if(n == 2){
+            return 1;
+        }
+        else{
+            return three;
+        }
+    }
+};
